@@ -10,8 +10,8 @@ Vue.use(VueRouter)
 // 2. require 运行时调用可以运用到任何地方 import是编译时调用的必须放到文件的头部
 // 3. require 是赋值过程，结果就是对象，数字，字符串，函数等，把其结果赋给某个变量 搭配 module.exports 使用
 //    import  是解构过程，将es6转化为es5在执行的，import语法会被转码为require  搭配 export default 使用
-console.log(content);
-console.log(con.xx);
+// console.log(content);
+// console.log(con.xx);
 const routes = [
     { path: '/404', redirect: '/' }, //重定项
     //首页

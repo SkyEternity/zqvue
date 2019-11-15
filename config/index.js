@@ -3,7 +3,8 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
+let apiConfig = require('./config')
+let runENV = process.env.RUN_ENV
 module.exports = {
   dev: {
 
@@ -27,7 +28,8 @@ module.exports = {
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,
-
+    // 获取接口地址
+    apiHost: runENV == 'dev' ? apiConfig.API_HOST_DEV : apiConfig.API_HOST_PROD,
     /**
      * Source Maps
      */

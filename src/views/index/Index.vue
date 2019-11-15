@@ -18,8 +18,8 @@ export default {
     };
   },
   created() {
-    indexServer.IndexInfo('028Da5E9406bF5eA').then((ret) => {
-      console.log(ret);
+    indexServer.IndexInfo('A892fb464E751f9F').then((res) => {
+      console.log(res);
     })
     // console.log(commonJs.MessageInfo('lalal','warning'));
     // this.$message('这是一条消息提示');

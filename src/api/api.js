@@ -37,20 +37,20 @@ const statusError = (status, other) => {
 }
 
 
-
+// https://wxapi.iduoha.com/v1/content/${this.$route.query.alias}
+//https://api.idongde.com/miniapp/v4/content/info/028Da5E9406bF5eA/v2
 //对axios进行初始化
-const instance = axios.create({timeout: 30000, baseURL: 'https://apidev.idongde.com/miniapp/v4/'}) //timeout 请求超过1分钟自动断开
+const instance = axios.create({timeout: 30000, baseURL: 'https://wxapi.iduoha.com/v1/'}) //timeout 请求超过1分钟自动断开
 
 // 添加请求拦截器
 instance.interceptors.request.use(function (config) {
-    console.log(config);
     // 在发送请求之前做些什么
     // 每此请求前都需要对token进行判断
     const token = localStorage.getItem('token')
     token && (config.headers.Authorization = token);   
     return config;
   }, function (error) {
-      console.log(error);
+    //   console.log(error);
     // 对请求错误做些什么
     return Promise.reject(error);
   });

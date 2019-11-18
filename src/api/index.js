@@ -5,7 +5,7 @@ import axios from './api'
 // https://wxapi.iduoha.com/v1/content/AabCa987eBa531fA/view
 const indexServer = {
     IndexInfo(params){
-        return axios.post(`content/${params}`).then((res) => {
+        return axios.get(`content/${params}`).then((res) => {
             return res.data
         })
     },

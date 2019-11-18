@@ -24,12 +24,10 @@ export default {
   //根据watch简监听currVal的变化 从而重新调取接口
   	watch: {
 		//如果有默认值 那么就是调取chenge事件
-		//此处监听父组件的变化，改变子组建也就发生改变
 	  	'value' (val, oldValue) {
-			  console.log(val);
-			  console.log(oldValue);
             this.setCurrentValue(val)
 		},
+		//子组建发生了改变后父组件里的值也就会发生改变
 		// 改变input的值从而使value变化然后触发change事件
 		// 为了实现数据的双向数据绑定 自组建
         'currVal' (val, oldValue) {

@@ -36,7 +36,7 @@ export default {
         }
   	},
   	created() {
-		  this.fetchData()
+		this.fetchData()
   	},
   	methods: {
 	//此处调取接口

@@ -14,23 +14,37 @@ Vue.use(VueRouter)
 // console.log(con.xx);
 const routes = [
     { path: '/404', redirect: '/' }, //重定项
-    //首页
-    { 
-        path: '/', 
-        name: 'index', 
-        //vue-loader的版本原因 新版需要加 default
-        component: require('./views/index/Index.vue').default,
+    //login
+    {
+        path: '/login',
+        name: 'login',
+        component: require('./views/login/Login.vue').default,
+    },
+    {
+        //侧边栏
+        path: '/',
+        name: 'navigation',
+        component: require('./views/Nav.vue').default,
         children: [
+            //首页
+            {
+                path: '/',
+                name: 'index',
+                //vue-loader的版本原因 新版需要加 default
+                component: require('./views/index/Index.vue').default,
+            },
             // content 路由
             ...content,
             // user路由
             ...user
+
         ]
     },
+
 ]
 const router = new VueRouter({
     base: '/view',
-    mode: 'history', 
+    mode: 'history',
     //主要是可以使用history.pushState()方法 这个再不刷新浏览器的情况下，创建新的浏览记录并插入浏览记录队列里面
     //但是也需要后端的支持 因为是单页面客户端应用，如果直接访问 xx.com/user/id 就会返回404。所以应该设置一个base界面
     // scrollBehavior,

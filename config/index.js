@@ -7,6 +7,7 @@ let apiConfig = require('./config')
 let runENV = process.env.RUN_ENV
 module.exports = {
   dev: {
+    host: '127.0.0.1',
     env: require('./dev.env'),
     port: 7011,
     autoOpenBrowser: true,

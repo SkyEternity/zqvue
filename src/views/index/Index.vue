@@ -1,8 +1,8 @@
 <template>
   <div>
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
     {{text}}
-    <selects v-model="name" :change='xx'></selects>
+    <!-- <selects v-model="name" :change='xx'></selects> -->
   </div>
 </template>
 
